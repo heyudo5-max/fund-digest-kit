@@ -27,9 +27,9 @@ That's it. Claude will research and aggregate insights on funding activity and c
 
 Run three steps in order. Don't skip the data step and jump to a script — the script is only as good as the aggregation behind it.
 
-1. **Capture data** → see `skills/funding-digest/references/data-capture.md`
-2. **Gather insights** → see `skills/funding-digest/references/insights-playbook.md`
-3. **Draft the script** → see `skills/funding-digest/references/script-templates.md`
+1. **Capture data** → see `workflows/references/data-capture.md`
+2. **Gather insights** → see `workflows/references/insights-playbook.md`
+3. **Draft the script** → see `workflows/references/script-templates.md`
 
 Read each reference file when you reach that step rather than all upfront.
 
