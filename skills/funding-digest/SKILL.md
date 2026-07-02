@@ -31,7 +31,7 @@ Run three steps in order. Don't skip the data step and jump to a script — the 
 2. **Gather insights** → see `skills/funding-digest/references/insights-playbook.md`
 3. **Draft the script** → see `skills/funding-digest/references/script-templates.md`
 
-Read each reference file when you reach that step rather than all upfront.
+Read each reference file when you reach that step rather than all upfront. 
 
 ---
 
@@ -62,6 +62,7 @@ Guidelines:
 - **De-duplicate**: the same round appears across multiple outlets. Count it once.
 - **Distinguish funding rounds from acquisitions** — keep them in separate buckets; an exit is a different story than a raise.
 - **Don't fabricate**. If you can't find a number, say "not disclosed" rather than guessing. Undisclosed rounds still count toward deal volume but not toward dollar totals.
+- **Flag any conclusions you're unsure of** If you're making statements that you're unsure of in the script, flag them as "inferred" so that they can be verified. 
 - Record everything in the workbook's Deals tab (`assets/funding-digest-workbook.xlsx`) as you go, or the CSV (`assets/deals-template.csv`) if using the backup path.
 
 ## Quantifying the metrics
