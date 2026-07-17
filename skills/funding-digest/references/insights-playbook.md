@@ -5,7 +5,7 @@ Metrics tell you *what* happened. Insights tell a founder *what to do with it*. 
 - **The claim** — one clear sentence.
 - **Rationale (1–2 points)** — the specific data or examples that support it.
 - **Source(s)** — where it came from (deal names, outlets, the metrics summary).
-- **So-what for founders** — why someone building or raising should care.
+- **So-what for founders or job seekers** — why someone building or raising or job hunting should care.
 
 Skip anything you can't support. A confident but ungrounded "AI is hot" is worse than three smaller claims you can actually defend.
 
@@ -32,6 +32,7 @@ Use these as lenses. Not all will yield something every period — pick the ones
    - **Acquisitions** — who's buying, at what apparent multiples, and what does it say about consolidation in a category?
    - **Time-to-raise / valuation chatter** — when sources mention it.
    - **Anti-trends** — a once-hot category going quiet is itself an insight.
+   - **Sales & marketing jobs** - highlight companies that have open sales and marketing roles. Specify the companies and open roles. 
 
 ## Quality bar
 
