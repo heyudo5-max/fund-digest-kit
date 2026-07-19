@@ -1,0 +1,6 @@
+deal_type,date,company,amount_usd,stage,customer_type,sector,sub_segment,use_case,country,region,lead_investors,founder_notes,hiring_sales,hiring_marketing,careers_url,source_url
+funding,2026-06-23,ExampleAI,12000000,Series A,B2B,AI,legal-ai,Automates contract review for in-house legal teams,USA,North America,Acme Ventures,Repeat founder ex-BigLaw,Y,Y,https://exampleai.com/careers,https://www.finsmes.com/example
+funding,2026-06-24,PaySeed,2500000,Seed,B2B,Fintech,payments-infra,Embedded payments API for marketplaces,UK,Europe,Seed Capital LLP,First-time technical founder,,,,https://techcrunch.com/example
+funding,2026-06-25,CloudScale,40000000,Series B,B2B,Data/Infra,observability,Cost observability for cloud infra teams,USA,North America,Growth Fund IX,Second-time founder,Y,,https://cloudscale.com/jobs,https://techcrunch.com/example3
+funding,2026-06-26,HealthGrid,85000000,Series C,B2B,Healthcare,clinical-ai,AI documentation for hospital networks,USA,North America,Late Stage Partners,Domain-expert founder ex-clinician,Y,Y,https://healthgrid.com/careers,https://www.finsmes.com/example4
+acquisition,2026-06-25,DataCo,,Acquisition,B2B,Data/Infra,analytics,Acquired by BigCorp for analytics stack,Germany,Europe,,n/a,,,,https://www.finsmes.com/example2
