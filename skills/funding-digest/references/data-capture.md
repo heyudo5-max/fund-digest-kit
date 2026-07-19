@@ -37,6 +37,7 @@ Work the sources systematically rather than one big query:
 3. **Regional pass** — at least one region-specific source (EU-Startups, Inc42, regional outlets) so non-US activity isn't undercounted.
 4. **Primary verification** — for any deal that will anchor a headline claim, open the company's or lead investor's own announcement and confirm amount + stage.
 5. **Acquisitions pass** — search M&A / acquisition news for the window separately.
+6. **GTM-hiring pass (Series A–C only)** — for each Series A, B, and C round, check the company's careers page and LinkedIn jobs for open **sales** and **marketing** roles. Mark `hiring_sales` / `hiring_marketing` = `Y` and save the `careers_url`. This is the raw material for the video's "who's hiring GTM" segment. Only mark `Y` on roles you actually see; a company can be hiring engineers heavily and no GTM at all, which is itself a signal. You don't need to do this for pre-seed/seed rounds — the segment is deliberately A–C, where a GTM build-out is a meaningful scaling signal rather than noise.
 
 For each deal, capture a row in the workbook's Deals tab (or the CSV). Aim for completeness on the big rounds and a representative sample of the long tail — you don't need every $200K pre-seed, but you do need enough to characterize stage and sector mix honestly.
 
