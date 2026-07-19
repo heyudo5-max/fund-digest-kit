@@ -63,6 +63,20 @@ def aggregate(rows, prior_total=None):
         region_dollars[(r.get("region") or "Unknown").strip() or "Unknown"] += a
         country_dollars[(r.get("country") or "Unknown").strip() or "Unknown"] += a
 
+    # Series A-C companies hiring sales / marketing
+    def truthy(v):
+        return (v or "").strip().lower() in ("y", "yes", "true", "1", "x")
+    abc = {"series a", "series b", "series c"}
+    hiring = []
+    for r in funding:
+        if (r.get("stage") or "").strip().lower() in abc:
+            s, mk = truthy(r.get("hiring_sales")), truthy(r.get("hiring_marketing"))
+            if s or mk:
+                roles = ", ".join([x for x in (["Sales"] if s else []) + (["Marketing"] if mk else [])])
+                hiring.append({"company": (r.get("company") or "").strip(),
+                               "stage": (r.get("stage") or "").strip(), "roles": roles,
+                               "careers_url": (r.get("careers_url") or "").strip()})
+
     growth = None
     if prior_total not in (None, 0):
         growth = (total - prior_total) / prior_total * 100.0
@@ -83,6 +97,8 @@ def aggregate(rows, prior_total=None):
         "deals_by_region": dict(regions_count.most_common()),
         "dollars_by_region": {k: round(v) for k, v in sorted(region_dollars.items(), key=lambda x: -x[1])},
         "top_countries_by_dollars": {k: round(v) for k, v in sorted(country_dollars.items(), key=lambda x: -x[1])[:8]},
+        "series_abc_hiring_gtm": hiring,
+        "series_abc_hiring_count": len(hiring),
     }
 
 
@@ -112,6 +128,13 @@ def print_summary(m):
     print("Top countries by $:")
     for k, v in m["top_countries_by_dollars"].items():
         print(f"  {k:<16} {fmt_usd(v)}")
+
+    print("\nSeries A-C hiring Sales/Marketing:")
+    if m["series_abc_hiring_gtm"]:
+        for h in m["series_abc_hiring_gtm"]:
+            print(f"  {h['company']:<16} {h['stage']:<10} hiring: {h['roles']}")
+    else:
+        print("  (none captured)")
     print()
 
 
