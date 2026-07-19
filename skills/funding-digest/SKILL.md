@@ -62,12 +62,12 @@ Guidelines:
 - **De-duplicate**: the same round appears across multiple outlets. Count it once.
 - **Distinguish funding rounds from acquisitions** — keep them in separate buckets; an exit is a different story than a raise.
 - **Don't fabricate**. If you can't find a number, say "not disclosed" rather than guessing. Undisclosed rounds still count toward deal volume but not toward dollar totals.
-- **Flag any conclusions you're unsure of** If you're making statements that you're unsure of in the script, flag them as "inferred" so that they can be verified. 
+- **For every Series A, B, and C round, check hiring.** Look at the company's careers page and LinkedIn jobs for open **sales** and **marketing** roles, and mark `hiring_sales` / `hiring_marketing` = `Y` in the row (with the `careers_url`). A just-funded A–C company staffing up GTM is a strong "scaling revenue" signal and feeds a dedicated segment of the video. Don't guess — only mark `Y` if you actually see relevant open roles.
 - Record everything in the workbook's Deals tab (`assets/funding-digest-workbook.xlsx`) as you go, or the CSV (`assets/deals-template.csv`) if using the backup path.
 
 ## Quantifying the metrics
 
-**Primary path — the spreadsheet.** Capture deals in `assets/funding-digest-workbook.xlsx` (the "Deals" tab), and the "Metrics" tab computes everything automatically with live formulas: deal and acquisition counts, total and median raised, stage split (deals *and* dollars), B2B/B2C/B2G/others split, sector and region tallies, and period-over-period growth. The only cell anyone types into by hand is the yellow **prior-period total** on the Metrics tab, which drives the growth number. Copy a fresh workbook for each period so history is preserved.
+**Primary path — the spreadsheet.** Capture deals in `assets/funding-digest-workbook.xlsx` (the "Deals" tab), and the "Metrics" tab computes everything automatically with live formulas: deal and acquisition counts, total and median raised, stage split (deals *and* dollars), B2B/B2C/B2G split, sector and region tallies, and period-over-period growth. The only cell anyone types into by hand is the yellow **prior-period total** on the Metrics tab, which drives the growth number. Copy a fresh workbook for each period so history is preserved.
 
 Do it like this:
 1. Copy the template to a dated file (e.g. `deals-2026-06-28.xlsx`).
@@ -78,3 +78,44 @@ Do it like this:
 If you're working in an environment where the formulas don't auto-recalculate after edits (some headless/automated setups), recalculate with the xlsx tooling — e.g. `python /path/to/xlsx/scripts/recalc.py deals-2026-06-28.xlsx` — or just open and save the file in Excel/Google Sheets/LibreOffice once, which forces a recalc.
 
 **Backup path — the Python script.** If a spreadsheet isn't convenient (e.g. a fully automated run, or the data is already a CSV), `scripts/aggregate.py` computes the same metrics from a CSV:
+
+```bash
+python scripts/aggregate.py path/to/deals.csv --prior-total <previous_period_total_usd>
+```
+
+It prints a summary and writes `metrics.json`. The workbook and the script use the same column schema, so a CSV exported from the Deals tab works directly.
+
+**Quick read.** For a handful of deals where the user just wants a fast take, it's fine to total them up directly in your reply — but state the numbers as approximate, and never invent precision the underlying data doesn't support. For anything that will be published on a regular cadence, use the spreadsheet so the numbers are consistent and checkable.
+
+## Generating visuals for the video
+
+Produce ready-to-drop graphics from the same data so the script isn't just talking-head. Run:
+
+```bash
+python scripts/make_visuals.py assets/deals-template.csv \
+    --prior-total <previous_period_total_usd> \
+    --format vertical --tag "Week of Jun 22-28, 2026" --out outputs/visuals
+```
+
+Point it at your dated deals file (`.csv` or `.xlsx` — it reads the Deals tab). It writes four PNG cards to `outputs/visuals/`:
+
+- `01_headline.png` — total raised, deal count, growth arrow (the hook visual)
+- `02_stage_split.png` — funding by stage bar
+- `03_regions.png` — top regions by dollars bar
+- `04_hiring_gtm.png` — the Series A–C companies hiring Sales & Marketing
+
+`--format` accepts `vertical` (1080×1920, for TikTok/Reels/Shorts — the default), `landscape` (1920×1080, for YouTube), or `square`. Generate whichever the target platform needs; for a multi-platform post, run it twice (vertical + landscape). In the script, reference each card at the beat where it appears so the editor knows what goes on screen (the script template shows how). If the user wants a look not covered here — a different chart, a branded template, an animated build — offer to extend the script or hand off to a design tool; don't force everything into these four cards.
+
+## Output
+
+By default, deliver in this order in your reply:
+1. A short **metrics summary** (the headline numbers, plus the Series A–C companies hiring Sales/Marketing).
+2. **3–6 insights**, each with a one-line "why it matters" and its source(s).
+3. The **video script**, formatted per `skills/funding-digest/references/script-templates.md` — including the "who's hiring GTM" beat and on-screen references to the generated visuals.
+4. The **visuals** in `outputs/visuals/`.
+
+Save the script to a dated file in `outputs/` (e.g. `outputs/script-<cadence>-<date>.md`) and present it alongside the visuals. Keep the chat summary tight; the script and visuals are the deliverables.
+
+## Tone reminder
+
+Friendly, relaxed, helpful — like a knowledgeable friend who watches this space, not a news anchor and not a hype account. Confident but not breathless. No "🚨 BREAKING," no fake urgency, no jargon dumps. Explain the "so what" for a founder in plain language.
