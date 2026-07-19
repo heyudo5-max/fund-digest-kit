@@ -5,7 +5,7 @@ Metrics tell you *what* happened. Insights tell a founder *what to do with it*. 
 - **The claim** — one clear sentence.
 - **Rationale (1–2 points)** — the specific data or examples that support it.
 - **Source(s)** — where it came from (deal names, outlets, the metrics summary).
-- **So-what for founders or job seekers** — why someone building or raising or job hunting should care.
+- **So-what for founders** — why someone building or raising should care.
 
 Skip anything you can't support. A confident but ungrounded "AI is hot" is worse than three smaller claims you can actually defend.
 
@@ -20,7 +20,7 @@ Use these as lenses. Not all will yield something every period — pick the ones
    Use the count-share vs. dollar-share split. Lots of seed *deals* but shrinking seed *dollars* tells a different story than the reverse. Compare to the prior period. Founders raising early care a lot about this.
 
 3. **What roles are funded companies hiring for?**
-   After a raise, companies post roles — a leading signal of where they're investing. Check the funded companies' careers pages / LinkedIn for patterns (heavy GTM/sales = scaling revenue; heavy ML/research = product bet; ops/forward-deployed = enterprise push). Even a directional read ("post-raise, several are loading up on go-to-market, not just engineers") is useful.
+   After a raise, companies post roles — a leading signal of where they're investing. Check the funded companies' careers pages / LinkedIn for patterns (heavy GTM/sales = scaling revenue; heavy ML/research = product bet; ops/forward-deployed = enterprise push). Even a directional read ("post-raise, several are loading up on go-to-market, not just engineers") is useful. The captured `hiring_sales` / `hiring_marketing` flags on Series A–C rounds give you this directly — use the named list both as its own script beat (see the script template) and as evidence for a broader insight about where GTM budget is flowing this period.
 
 4. **Founder profile trends — solo vs. team, first-time vs. repeat?**
    Are funded founders repeat operators? Ex-FAANG / ex-unicorn? Technical solo founders? Domain experts from the industry they're disrupting? This signals what investors are pattern-matching on. Source from announcement bios and LinkedIn.
@@ -32,7 +32,6 @@ Use these as lenses. Not all will yield something every period — pick the ones
    - **Acquisitions** — who's buying, at what apparent multiples, and what does it say about consolidation in a category?
    - **Time-to-raise / valuation chatter** — when sources mention it.
    - **Anti-trends** — a once-hot category going quiet is itself an insight.
-   - **Sales & marketing jobs** - highlight companies that have open sales and marketing roles. Specify the companies and open roles. 
 
 ## Quality bar
 
