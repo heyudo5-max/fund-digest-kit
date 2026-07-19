@@ -34,9 +34,10 @@ funding-digest/
 │   └── deals-template.csv          ← Same schema in CSV form (for the Python backup)
 │
 ├── scripts/
-│   └── aggregate.py                ← BACKUP calculator: metrics from a CSV
+│   ├── aggregate.py                ← BACKUP calculator: metrics from a CSV
+│   └── make_visuals.py             ← Generates video-ready PNG cards from the deals data
 │
-└── outputs/                        ← Finished digests and scripts land here
+└── outputs/                        ← Finished digests, scripts, and visuals/ land here
     └── .gitkeep
 ```
 
@@ -73,6 +74,21 @@ The **Python script is a backup** for automated runs or when your data is alread
 ```bash
 python scripts/aggregate.py assets/deals-template.csv --prior-total 12000000
 ```
+
+## Visuals for the video
+
+`scripts/make_visuals.py` turns the same deals data into four PNG cards you can drop straight into an edit — a headline stat card, a funding-by-stage bar, a top-regions bar, and a "who's hiring GTM" card listing the Series A–C companies staffing up Sales & Marketing:
+
+```bash
+python scripts/make_visuals.py assets/deals-template.csv \
+    --prior-total 12000000 --format vertical --tag "Week of Jun 22-28"
+```
+
+`--format` is `vertical` (1080×1920, TikTok/Reels/Shorts), `landscape` (1920×1080, YouTube), or `square`. Cards land in `outputs/visuals/`. Requires `matplotlib` (`pip install matplotlib`).
+
+## What each video includes
+
+Metrics summary → 3–6 sourced insights → a **"who's hiring GTM"** beat naming the Series A–C companies hiring Sales & Marketing → the visual cards, referenced beat-by-beat in the script.
 
 ## Requirements
 
