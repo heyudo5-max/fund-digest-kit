@@ -1,4 +1,0 @@
-deal_type,date,company,amount_usd,stage,customer_type,sector,sub_segment,use_case,country,region,lead_investors,founder_notes,source_url
-funding,2026-06-23,ExampleAI,12000000,Series A,B2B,AI,legal-ai,Automates contract review for in-house legal teams,USA,North America,Acme Ventures,Repeat founder ex-BigLaw,https://www.finsmes.com/example
-funding,2026-06-24,PaySeed,2500000,Seed,B2B,Fintech,payments-infra,Embedded payments API for marketplaces,UK,Europe,Seed Capital LLP,First-time technical founder,https://techcrunch.com/example
-acquisition,2026-06-25,DataCo,,Acquisition,B2B,Data,analytics,Acquired by BigCorp for analytics stack,Germany,Europe,,n/a,https://www.finsmes.com/example2
